@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js></script>
+    <title>My Ajax App</title>
+</head>
+<body>
+    <h1>so tired</h1>
+    <button id="get-books">them books</button>
+    <button id="post-new-book">Post new book</button>
+    <button id="delete-last-book"> Delete Book</button>
+    <ul id="books-list"></ul>
+    <script>
+    var $getBooks = $('#get-books')
+    var $postNewBook = $('#post-new-book')
+    var $deletedBook = $('#delete-last-book')
+    var $booksList = $('#books-list')
+
+    $getBooks.on('click', function(evt){
+        console.log("YOU clicked get them books")
+        $.ajax({url: '/books', method: 'get'})
+        .done(function(res){ console.log("server says:",res)
+        $booksList.html('')
+        res.forEach(book =>{
+            var theLi = $('<li>').text(book.title)
+            $booksList.append(theLi)
+            })
+        })
+    })
+
+    $postNewBook.on('click', function(evt){
+        console.log("You clicked Post New books")
+        $.ajax({url: '/books', method: 'post'})
+        .done(function(res) {
+        $booksList.html('') 
+        res.forEach(book =>{
+            var theLi = $('<li>').text(book.title)
+            $booksList.append(theLi)
+            })
+        })
+    })
+
+    $deletedBook.on('click', function(evt){
+        console.log("You clicked the Delete Button")
+        $.ajax({url: '/books', method: 'delete'})
+        .done(function(res) {
+            $booksList.html('') 
+            res.forEach(book =>{
+                var theLi = $('<li>').text(book.title)
+                $booksList.append(theLi)
+                })
+        })
+    })
+    </script>
+
+    
+</body>
+</html>

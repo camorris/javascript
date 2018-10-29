@@ -1,0 +1,30 @@
+<h1>Show Page</h1>
+<ul>
+<li><%= video.title %></li>
+<li><%= video.category %></li>
+</ul>
+
+<button id="<%=video._id%>" onclick="remove(event)">DELETE this shit</button>
+
+<script>
+    var url = "http://localhost:3000/videos/" 
+    
+    function remove(event) {      
+        console.log(event)   
+        console.log(event.target);
+        console.log(event.target.id);
+        const deleteId = event.target.id;
+        console.log(url+deleteId);
+        
+        $.ajax({
+            url: url+deleteId,
+            method: "delete"
+        }).done((res) => {
+            
+                window.location = '/videos'//we put this because ajax needs to know where to go 
+            
+            
+        })
+    }
+
+</script>

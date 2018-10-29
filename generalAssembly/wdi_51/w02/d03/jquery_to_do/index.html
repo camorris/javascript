@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>To Do</title>
+    <script src="jquery-3.2.1.js"></script>
+    <style>
+        h1{
+            color:indianred
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Get Yo Shit DONE</h1>
+    <button id='addBtn'>Add</button>
+    <input id='input-box' type="text">
+    <h2>Just Do It</h2>
+    <ol class='Incomplete'>
+    </ol>
+    <hr>
+     <h2>Just Did It</h2>
+     <ol class='Completed'>
+     </ol>
+         
+
+    <!-- $inputBox.val()  -->
+<script>
+var $createToDo = $('#addBtn')//
+var $input = $('#input-box')
+var $incompleteList = $('.Incomplete')
+var $li = $('li')
+var $completeList = $('.Completed')
+  
+$createToDo.on ('click', function(){
+    var $theLi = $('<li>')
+    $theLi.text($input.val())
+    $incompleteList.append($theLi)
+})
+
+$incompleteList.on('click', 'li', function(){//the click function specifically adds the new li into the empty order list to the variable $incompleteList
+    $(this).appendTo($completeList)
+})
+
+
+    
+
+
+</script>
+</body>
+</html>

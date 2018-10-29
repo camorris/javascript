@@ -1,0 +1,6 @@
+<h1>Elements#index</h1>
+<ul>
+    <% @elements.each do |e|%>
+    <li><%= link_to(e.name, "/elements/#{e.id}") %> </li> 
+    <% end %>
+</ul>

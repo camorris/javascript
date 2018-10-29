@@ -1,0 +1,10 @@
+<h1>Create new Movie. You're in LA</h1>
+
+<%= form_for @the_new_movie do |f| %>
+    Title <%= f.text_field :title %> <br />
+    Year <%= f.number_field :year %> <br />
+    Synopis <%= f.text_area :synopsis %> <br />
+    Genre <%= f.text_field :genre %> <br />
+
+    <%= f.submit %>
+<% end %>

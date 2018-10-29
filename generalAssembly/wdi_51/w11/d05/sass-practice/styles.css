@@ -1,0 +1,32 @@
+nav {
+  background: #eaeaea;
+  border-bottom: 1px solid darkgrey; }
+  nav ul, nav li {
+    list-style: none;
+    display: inline; }
+
+#main {
+  width: 960px; }
+
+.column {
+  width: 320px; }
+
+.message, .error, .success {
+  font-size: 14px;
+  padding: 25px;
+  height: 40px; }
+
+.error {
+  background: red; }
+
+.success {
+  background: green; }
+
+footer {
+  background: #eaeaea;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px; }
+
+/*# sourceMappingURL=styles.css.map */

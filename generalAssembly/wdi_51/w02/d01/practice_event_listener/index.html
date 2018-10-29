@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color Game</title>
+</head>
+<style>
+    #rojo{
+        color: red;
+        
+    }
+
+    #azul{
+        color: blue;
+    }
+    #verde{
+        color: green;
+    }
+</style>
+<body>
+    <button id='jugar'>PLAY</button>
+    <button id='rojo'>red</button>
+    <button id='verde'>green</button>
+    <button id='azul'>blue</button>
+    <h1>SCORE</h1>
+<script>
+
+    var currentColor = ''
+    function randomInt(n) {
+        return Math.floor (Math.random() * n)
+    }
+
+    var arrayOfColors = ['red', 'green', 'blue']
+    function colorSelector(){
+        var randomNum = randomInt(arrayOfColors.length)
+        console.log(randomNum)
+        var chosenColor = arrayOfColors[randomNum]
+        console.log(chosenColor)
+        document.body.style.backgroundColor = chosenColor
+        currentColor = chosenColor
+    }
+
+var playButton = document.querySelector('#jugar')
+playButton.onclick = function(){colorSelector()}
+
+  var redButton = document.querySelector('#rojo')
+  redButton.onclick = function(){
+      
+//         if (document.body.style.backgroundColor === "red"){
+//          alert ("You are right")
+//         }
+//         else{
+//          alert('try again')
+//         }
+//     }
+
+// var greenButton = document.querySelector("#verde")
+// greenButton.onclick = function(){
+
+//     if (document.body.style.backgroundColor === 'green'){
+//     alert ("You are right")
+//     }
+//     else {
+//     alert('try again')
+//     }
+// }
+// var blueButton = document.querySelector('#azul')
+// blueButton.onclick = function(){
+//     if(document.body.style.backgroundColor === "blue"){
+//         alert("You are right")
+//     }
+//     else {
+//         alert('try again')
+//     }
+// }
+
+// OR
+
+
+if (currentColor === "red"){
+         alert ("You are right")
+        }
+        else{
+         alert('try again')
+        }
+    }
+
+var greenButton = document.querySelector("#verde")
+greenButton.onclick = function(){
+
+    if (currentColor === 'green'){
+    alert ("You are right")
+    }
+    else {
+    alert('try again')
+    }
+}
+var blueButton = document.querySelector('#azul')
+blueButton.onclick = function(){
+    if(currentColor === "blue"){
+        alert("You are right")
+    }
+    else {
+        alert('try again')
+    }
+}
+</script>
+</body>
+</html>

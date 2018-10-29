@@ -1,0 +1,10 @@
+<h1>Make a Sandwich</h1>
+
+<%= form_for @sandwich do |f| %>
+    <%= f.text_field :bread, placeholder: "Bread" %>
+    <%= f.text_field :cheese, placeholder: "Cheese" %>
+    <%= f.text_field :protein, placeholder: "Protein" %>
+    <%= f.text_field :toasted, placeholder: "Toasted" %>
+    <%= f.submit "Cook it up" %>
+<% end %>
+

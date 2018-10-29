@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tic Tac Toe</title>
+    <style>
+    .square {
+        background: black;
+        width: 100px;
+        height: 100px;
+        border: solid white;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        font-size: 80px;
+    }
+    .grid {
+        width: 330px;
+        height: 330px;
+        border: dashed;
+        padding: 4px;
+
+    }
+
+</style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <button id="clear">Reset</button>
+    <div class='grid'>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+</body>
+<script>
+    var player_one = 1;
+    var gameGrid = document.querySelector(".grid")
+    var square = document.querySelector(".square")
+gameGrid.addEventListener('click', function(){
+    if ( player_one == 1 ){
+        document.getElementByClass(square).innerHTML = "X";
+        player_one = 0;
+    } else {
+        document.getElementByClass(square).innerHTML = "O";    
+        player_one = 1;
+    }
+})
+
+
+// var game = {
+//     player: [{symbol: 'X'}, { symbol:'O'}]
+
+//         }
+//         game.currentPlayer = game.player[0]
+
+//     function checkline(a/0,b/1,c/2){
+//         return
+//     }
+
+    // currentPlayer: player [0],
+
+//     checkWinner() {
+    
+//         //check squares equal to each other here
+// },
+//      swithcPlayer(){
+//         //  switch logic here
+
+//      }
+// }
+
+// $('.square').on('click', function(){
+//     // check this if emoty just return
+//     game.checkWinner()
+//     game.switchPlayer()
+// })
+</script>

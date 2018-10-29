@@ -1,0 +1,9 @@
+<h1><%= @the_movie.title %></h1>
+<h2><%= @the_movie.year %></h2>
+
+<h2>Review</h2>
+<ul>
+    <% @the_movie.reviews.each do |r| %>
+    <li><%= r.title %></li>
+    <% end %>
+</ul>

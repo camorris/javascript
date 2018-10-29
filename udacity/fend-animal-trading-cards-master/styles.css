@@ -1,0 +1,40 @@
+/* add your CSS here */
+
+#interesting-fact{
+  font-style: italic;
+}
+
+span{
+  font-weight: bold;
+}
+
+li{
+  list-style: none;
+}
+
+#information{
+  border: 1px solid grey;
+  width:300px;
+  padding: 12px;
+  margin: 0 auto;
+}
+
+#card{
+  border: 1px solid grey;
+  padding: 12px;
+  width: 327px;
+  margin: 0 auto;
+  box-shadow: 10px 10px 10px lightgrey;
+}
+img{
+  margin: 0 auto;
+  width: 326px
+}
+
+h3{
+  font-size: 20px;
+  margin-top: -5px;
+}
+ul{
+  margin-left:-40px;
+}

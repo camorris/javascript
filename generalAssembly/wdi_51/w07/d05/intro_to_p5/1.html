@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to P5</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+</head>
+<body>
+    <script>
+        function setup(params){
+        createCanvas(400,400)
+         rect(100,20,20,30)
+         line(0,0,200,200)
+         point(150, 50)
+         ellipse(200,200,20,10)
+         text("Yo", 100, 200)
+    }
+    function draw(params) {
+
+    }
+
+    function mouseMoved(){
+        ellipse(mouseX,mouseY, 10, 10)
+    }
+    function mousePressed(){
+        rect(mouseX, mouseY, 20, 20)
+    }
+
+    function mouseDragged(){
+        rect(mouseX, mousey, 10, 10)
+    }
+        
+    </script>
+    
+</body>
+</html>

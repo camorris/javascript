@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<!-- Examples of Object Constructor -->
+<script>
+u1 = {name : 'chase', city: 'Inglewood'}
+{name: "chase", city: "Inglewood"}
+users = []
+users[0] = u1
+    // RETURNED {name: "chase", city: "Inglewood"}
+u2 = { name : "luc", city: "Santa Monica" }
+{name: "luc", city: "Santa Monica"}
+users[1] = u2
+{name: "luc", city: "Santa Monica"}
+    // NOW THE CONSOLE RETURNS THIS (2) [{…}, {…}]0: {name: "chase", city: "Inglewood"}1: {name: "luc", city: "Santa Monica"}length: 2__proto__: Array(0)
+
+
+function makeUserAndPushToUsers(nombre, ciudad) { // USE ANOTHER LANGUAGE IN PARAMETERS WHEN THE PROPERTIES ARE THE SIMILAR
+var u = { name: nombre, city: ciudad} // THE VARIABLE U WAS CREATED TO ASSIGN THE VALUE OF NOMBRE AND CIUDAD TO THE PROPERTIES 'NAME' AND 'CITY'
+users.push( u ) // ADDS THE VALUE TO THE END OF ARRAY
+}
+ makeUserAndPushToUsers('mihir', 'cerritos')// ADDS THE VALUE THROUGH THE FUNCTION makeUserAndPushToUsers
+ users// shows the added  user
+ (3) [{…}, {…}, {…}]0: {name: "chase", city: "Inglewood"}1: {name: "luc", city: "Santa Monica"}2: {name: "mihir", city: "cerritos"}length: 3__proto__: Array(0)concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toString: ƒ toString()unshift: ƒ unshift()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {copyWithin: true, entries: true, fill: true, find: true, findIndex: true, …}__proto__: Object
+ makeUserAndPushToUsers('kevin','nyc')// ADDS THE VALUE THROUGH THE FUNCTION makeUserAndPushToUsers
+ undefined
+ users// shows the added  user
+ (4) [{…}, {…}, {…}, {…}]0: {name: "chase", city: "Inglewood"}1: {name: "luc", city: "Santa Monica"}2: {name: "mihir", city: "cerritos"}3: {name: "kevin", city: "nyc"}length: 4__proto__: Array(0)
+</script>-----------------------------------------------------------------------------------------------
+
+<!-- ANOTHER EXAMPLE -->
+
+
+<script>
+
+function createDog(nombre, colour,theAge, theBreed){ // this creates the function createDog. you must put createDog when you want to create a dog
+    var theDog = {} // creates the variable theDog and allows it to be a empty object
+    theDog.name = nombre //assigns the value of nombre to the property
+    theDog.color = colour// assigns the value of colour to the property of the theDog
+    theDog.breed = theBreed // assigns the value of theBreed to the variable theDog property
+    theDog.age = theAge || 'old' //assigns the value of the theAge to the variable theDog or it will just put old
+
+//THE ABOVE TEXT IS A CONSTRUCTOR FUNCTION//
+    
+    theDog.bark = function(){ // creates the function bark for the variable theDog
+        if (this.breed === 'chihuahua'){ // this if statement makes sure the breed of the dog is equal to chihuahua. if it is you will see 'woof woof woof woof woof' in the console
+            console.log ('woof woof woof woof woof') //console will print out wooof woof woof woof
+        } else if (this.breed === 'pit bull'){ // if the dog i create is a pit bull 
+        console.log ('WOOF WOOF')// the console will log 'WOOF WOOF'
+        }
+            else { 
+        console.log('woof woof')// If the dog is not a chihuahua or pit bull it will just log 'woof woof'
+        }
+
+}
+    return theDog } //
+
+</script>-------------------------------------------------------------------------------------
+
+<!-- ANOTHER EXAMPLE -->
+
+<script>
+
+function Dog (theName, theColor, theBreed){ // this line of code creates the function Dog with parameters
+    this.name = theName // this assigns theName value to the property name 
+    this.color = theColor// this assigns theColor value to the property color
+    this.breed = theBreed // this assigns theBreed value to the property breed
+}
+// THE ABOVE TEXT IS A CONSTRUCTOR FUNCTION//
+
+Dog.prototype.bark = function(){ // prototype is a object that gives all new dogs access to the function
+    if (this.breed === 'rapper'){ // if the property of the dog's breed equals rapper
+        console.log("I dont want to rap im trying to learn to code but syntax is crap")// print the orange text in the console
+
+    } else { //otherwise
+        console.log('woof') //just print woof if you call the dog breed
+    }
+ }
+
+Dog.prototype.sayName = function(){ //this line of code refers to the Dog function then uses the object prototype to get access to the function Dog function to console log 'hellow' when the sayName property is called
+    console.log('hellow hellow')//console.logs 'hellow'
+    }
+
+var JDogg = new Dog('jDogg', 'brown', 'rapper')//creates a new dog  using new which is a built in constructor function
+var snoopDogg = new Dog('snoopdoogydog', 'black', 'rapper') //creates a new dog using new which is a built in constructor function
+var littleJuan = new Dog('juanito', 'grey', 'chihuahua')//creates a new dog using new which is a built in constructor function
+
+</script>-------------------------------------------------------------------------------------
+</html>

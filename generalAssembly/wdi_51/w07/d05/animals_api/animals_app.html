@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animals</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+        <div style="float:right;">
+            <button id="panther" data-dimensions="30" data-color="pink" style="background-color:pink;">Panther</button>
+            <button id="fox" data-dimensions="20" data-color="orange" style="background-color:orange;">Fox</button>
+            <button id="turtle" data-dimensions="10" data-color="green" style="background-color:green;">Turtle</button>
+            <button id="cardinal" data-dimensions="5" data-color="red" style="background-color:red;">Cardinal</button>
+        </div>
+
+
+
+
+   <script>
+        let globalAnimal
+        var globalAnimals
+        function preload() {
+            httpGet('http://localhost:3001/animals', "json", (res) => {
+                globalAnimals = res
+            })
+        }
+
+       function setup() {
+            createCanvas(400, 400)
+            background('lime')
+            setTimeout(() => {
+                for(var i = 0; i < globalAnimals.length; i++) {
+                    var ani = globalAnimals[i]
+                    fill(ani.color)
+                    rect(ani.x, ani.y, ani.w, ani.h)
+                }
+            }, 1000)
+            
+       }
+
+       function draw() {
+        }
+
+       function mouseMoved() {
+            
+       }
+//this is the vent listener for p5
+       function mousePressed(event) {
+            var url = 'http://localhost:3001/animals/new';
+            if((event.clientX <= 400) && (event.clientY <= 400) && !!globalAnimal) {
+                globalAnimal.x = event.clientX
+                globalAnimal.y = event.clientY
+                httpPost(url, 'json', globalAnimal, function(result) {
+                    var ani = result
+                    console.log(ani)
+                    fill(ani.color)
+                    rect(ani.x, ani.y, ani.width, ani.height)
+                })
+            } else {
+                return
+            }
+        }
+// assigning event listeners to all the buttons Anthony created on lines 16-21
+        var btns = document.querySelectorAll('button');
+        for(var i = 0; i < btns.length; i++) {
+            var btn = btns[i]
+            btn.addEventListener('mouseover', function() {
+                var animalName = this.getAttribute('id')
+                var animalColor = this.getAttribute('data-color');
+                var animalDimensins = Number(this.getAttribute('data-dimensions'))
+                var animal = {
+                    name: animalName,
+                    color: animalColor,
+                    width: animalDimensins,
+                    height: animalDimensins
+                }
+                globalAnimal = animal
+            });
+        }
+    </script>
+</body>
+</html>

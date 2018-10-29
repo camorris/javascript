@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Pancakes</title>
+    <script src="jquery-3.2.1.js"></script>
+    <style>
+    #jimmy-plate{background: red; min-height: 100px;}
+    #verena-plate{background: lime; min-height: 100px;}
+    </style>o
+</head>
+<body>
+    <h1>Pancakes App</h1>
+
+    <ul id="jimmy-plate"></ul>
+    <hr>
+    <ul id="verena-plate"></ul>
+    <input id="input-box" type="text">
+   
+    <!-- READ RIGHT TO LEFT -->
+    <!-- $ in front of variable lets developers know that it is a jQuery element -->
+    <!-- when doubt console.log -->
+<script>
+    $('h1').fadeOut('slow') //fades out h1 tag slowly
+    $('h1').fadeIn(2000) // fades in h1 tag within 2 seconds
+    var $jimmyStack = $('#jimmy-plate') // assigns the id jimmy-plate to jQueryselector $(___)
+    var  $verenaStack = $('#verena-plate')// assigns the id verena-plate to jQuery selector $(___)
+    var $inputBox = $('#input-box') // assigns the id input-box to jQuery selector $(____)
+    var $bbPancake = $('<li>')//assigns the li tag through jQuery to bbPancake which is just a variable with no var
+    $bbPancake.text('blueberry')//assigns the text 'blueberry' to variable bbPancake 
+    var $moveButton = $('<button>') //make a new button through jQuery
+    
+    $moveButton.text('move to verena')// assigns the text 'move to verena' to the button
+    $moveButton.on('click', function(){// this is how we start a addEventListenere through jQuery
+        var $theLi = $(this).parent() // we are taking parent method to Get the parent of each element in the current set of matched elements (theLi), optionally filtered by a selector.
+        $verenaStack.append($theLi)// Insert content, specified by the parameter which is theLi, to the end of each element (verenaStack) in the set of matched elements. 
+    })
+    $bbPancake.append($moveButton)//this will attach the moveButton to bbPancake. essentially moving the bbPancake into the li tag
+    $jimmyStack.append($bbPancake)//this adds the list item (bbPancake) to the unordered list ($jimmStack-line27)
+
+    var $bananaPancake = $('<li>')// $ jQuery method is assigning a li tag to the variable banana pancake.
+    $bananaPancake.text ('banana')// the method .text will assign the text 'banana' to the li tag bananaPancake
+    $moveButton = $('<button>')// assign a new button to the already created variable
+    $moveButton.text('move to verena')//assigns the text 'move to verena' inside the button
+    $moveButton.on ('click', function(){ //this how we assign an Event listener with jQuery.
+        var $theLi = $(this).parent() // we are taking parent method to Get the parent of each element in the current set of matched elements (theLi), optionally filtered by a selector.
+        $verenaStack.append($theLi) // Insert content, specified by the parameter which is theLi, to the end of each element (verenaStack) in the set of matched elements. 
+    })
+
+    // **lines 37- 38 are recreated in the new element bananaPancake**//
+
+    $bananaPancake.append($moveButton) //this will attach the moveButton to bbPancake. essentially moving the bbPancake into the li tag
+    $jimmyStack.append($bananaPancake) //this adds the list item (bbPancake) to the unordered list ($jimmStack-line27)
+
+
+    console.log($inputBox.val())//this is how you get the value out of the input log check 'to do' directory for application
+</script>
+</body>
+</html>

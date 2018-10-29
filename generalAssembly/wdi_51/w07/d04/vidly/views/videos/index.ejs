@@ -1,0 +1,11 @@
+ <h1>All Videos</h1>
+<ul>
+    <% videos.forEach(function(v){ %>
+        <li> 
+            <a href="/videos/<%=v._id %>">
+                <%= v.title %>
+            </a> 
+        </li>
+            <% }) %>
+    </ul>
+             

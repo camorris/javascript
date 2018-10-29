@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js"></script>
+</head>
+<body>
+    <script>
+        class Ball {
+            constructor(props){
+                this.x = props.x
+                this.y = props.y
+                this.vx = props.vx
+                this.vy = props.vy
+                this.size = props.size
+                this.color = props.color
+            }
+            render(){
+                fill(this.color)
+                ellipse(this.x, this.y, this.size, this.size)
+            }
+            update(){
+                // x and y based on vx and vy respectively
+                this.x += this.vx
+            }
+        }
+        
+        var b1, b2, b3
+        function setup() {
+            createCanvas(400, 400)
+            b1 = new Ball({x:0, y:0, vx:1, vy:0, size: 30, color: 'blue'})
+            b2 = new Ball({x:200, y:0, vx:3, vy:0, size: 30, color: 'yellow'})
+            b3 = new Ball({x:100, y:0, vx:2, vy:0, size: 50, color: 'green'})
+        }
+        function draw() {
+            background('white')
+            b1.update()
+            b1.render()
+            b3.update()
+            b3.render()
+        }
+    </script>
+</body>
+</html>

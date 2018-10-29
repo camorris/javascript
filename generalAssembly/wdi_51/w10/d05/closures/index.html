@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function converter(factor, unitForm, unitTo){
+      return function(n){
+      var result = n * factor
+      return n + unitFrom + 'is' + result + unitTo
+      }
+    }
+
+    var milesToKm = makeConverter(1.6, 'miles', 'km')
+    var poundsToKg = makeConverter(0.45, 'lbs', 'kg')
+
+        console.log(milesToKm(2))
+        console.log(poundsToKg(2))
+  </script>
+</body>
+</html>

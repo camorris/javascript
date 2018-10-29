@@ -1,0 +1,41 @@
+
+$primaryBgColor: #eaeaea;
+$contentWidth: 960px;
+// above is how you set variables
+
+@mixin border-radius($radius){
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius:$radius;
+  -ms-border-radius:$radius;
+}
+
+@import 'nav';
+
+#main{
+  width: $contentWidth;
+}
+
+.column{
+  width: $contentWidth/3
+  //mathematical operators
+}
+
+.message{
+  font-size:14px;
+  padding: 25px;
+  height: 40px;
+}
+
+.error{
+  background: red;
+  @extend .message;
+  //inherits from the message
+}
+
+.success{
+  background: green;
+  @extend .message;
+
+}
+@import 'footer';

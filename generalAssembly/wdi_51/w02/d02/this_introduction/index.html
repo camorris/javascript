@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // logThis : refers to the object to which the function is being called from.
+
+    dog = {
+name : 'Billy Boy',
+color: 'gray',
+bark : function() {
+console.log('woof')
+},
+lice: [{},{},{}],
+plate: { name:'BB', address: '1321 main'},
+logThis : function() {
+console.log(this)}
+}
+
+// or
+
+function generalLogThis(){
+    console.log('this is:')
+    console.log(this)
+}
+ me = {name:'kyle', lastName: 'zhen',
+ logThis: generalLogThis}
+
+me.logThis()
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<h1>Create Review</h1>
+<%= form_for @review do |f|%>
+    Title<%=f.text_field :title%>
+    Body<%=f.text_area :body%>
+    Movie Id<%=f.text_field :movie_id%>
+    
+    <%= f.submit %>
+<% end %>

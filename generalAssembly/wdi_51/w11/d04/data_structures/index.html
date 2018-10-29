@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      class Stack {
+        constructor(size) {
+            this.storage = new Uint8Array(size) // size is how many elements
+            this.stackPointer = 0
+            this.size = size
+        }
+
+        push(item) {
+            this.storage[this.stackPointer] = item
+            this.stackPointer += 1 // move the stack pointer up
+            if(this.stackPointer > this.size) {
+                throw Error("Out of bounds, you tried to push into an unaccessible location")
+            }
+        }
+
+        pop() {
+            this.stackPointer -= 1 // move the stack pointer down
+            if(this.stackPointer < 0) {
+                throw Error("Out of bounds, you tried to pop into an unaccessible location")
+            }
+            return this.storage[this.stackPointer]
+        }
+
+        peek() {
+            if(this.stackPointer - 1 < 0)
+                throw Error("Peek")
+            return this.storage[this.stackPointer - 1]
+        }
+
+        reverse() {
+
+        }
+    }
+
+    class Queue {
+      constructor(size) {
+          this.storage = new Uint8Array(size)
+          this.size = size
+          this.front = -1 // 0
+          this.rear = 0
+      }
+
+      enqueue(item) {
+          this.storage[this.rear++] = item // added ++ inside
+          // this.rear += 1
+      }
+
+      dequeue() {
+          var result = this.storage[++this.front] // if front is zero don't use ++ 
+          var front = this.front
+          delete this.storage.front
+          // this.front += 1
+          return result
+      }
+  }
+    
+  </script>
+  
+</body>
+</html>

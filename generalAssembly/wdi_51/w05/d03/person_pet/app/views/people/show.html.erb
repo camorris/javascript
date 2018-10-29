@@ -1,0 +1,10 @@
+<h1><%= @the_person.name %></h1>
+<h2><%= @the_person.age %></h2>
+
+<h2>Pet</h2>
+<ul>
+    <% @the_person.pets.each do |p| %>
+    <li>Name: <%= p.name %></li>
+      <li>Species: <%= p.species%></li>
+    <% end %>
+</ul>

@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.15/p5.min.js"></script>
+    <title>breakout</title>
+</head>
+<body>
+    <script>
+        var ball
+        function setup(){
+            createCanvas (400,300)
+            ball = {x: width/2, y: height,vx: random(0, 0.4), vy: -2}
+        }
+        function draw(){
+            background('black')
+            fill('blue')
+            ellipse(ball.x, ball.y, 20, 20)
+            ball.x = ball.x + ball.vx
+            ball.y = ball.y + ball.vy
+            if (ball.y < 0){
+                ball.vy = -ball.vy
+            }
+        }
+    </script>
+</body>
+</html>

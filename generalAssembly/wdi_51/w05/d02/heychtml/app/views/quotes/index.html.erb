@@ -1,0 +1,6 @@
+<h1>Quotes#index</h1>
+<ul>
+    <% @quotes.each do |q|%>
+    <li><%= link_to(q.topic, "/quotes/#{q.id}") %><%= q.topic %> <%= q.created_at %></li> 
+    <% end %>
+</ul>

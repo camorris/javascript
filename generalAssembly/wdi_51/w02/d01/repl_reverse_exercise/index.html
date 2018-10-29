@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function basicOp(operation, value1, value2) {
+        if (operation === '+') {
+            return value1 + value2
+            }
+         if (operation === '-'){
+        return value1 + value2
+        }
+         if (operation === '*') {
+        return value1 * vlaue2
+        }
+        if (operation === '/') {
+        return value1 / value2
+        }
+        }
+
+// challenge 2 reverse number
+
+function reverseNum(num) {
+    // 1. convert number to a string
+     var numberString = String(num)
+    // 2. convert that string into an array
+    var stringArray = numberString.split('')
+    // 3. create new array with the elements reversed
+var reversedArray = []
+for (var i = 0; i < numberString.length; i +=1) {
+    reversedArray.push(stringArray.pop())
+}
+    // 4. go from a new array back to string.
+var reversedString = reversedArray.join('')
+    // 5. fromnew string back to a number
+    var reversedNumber = Number(reversedString)
+
+    // return number
+return reversedNumber
+}
+console.log(reverseNum(123))
+
+
+// OR
+
+// METHOD CHAINING
+
+//OR
+
+function reverseNum(num) {
+    if(typeof num === 'number') {
+        var numbers
+    }
+}
+</script>
+</body>
+</html>

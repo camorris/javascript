@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to P5</title>
+    <!-- this link allows you to use p5 on your files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+</head>
+<body>
+    <script>
+        var globalY = 0
+        var globalX = 0
+        
+        function setup(params){
+            createCanvas(400,400)//width, height
+        }
+    function draw(params) {
+        background("chartreuse")
+        rect(0, globalY, 20,20)
+        globalY = globalY + 2
+        globalX = globalX + 3
+
+    }
+
+    function mouseMoved(){
+    }
+    function mousePressed(){
+        
+    }
+
+    function mouseDragged(){
+        
+    }
+        
+    </script>
+    
+</body>
+</html>

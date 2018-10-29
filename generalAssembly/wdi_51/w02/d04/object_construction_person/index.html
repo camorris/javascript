@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dog</title>
+</head>
+<body>
+    <script>
+    
+    function person(theName, theAge, theHeight, theEyeColor) {// this line of code starts the constructor function person with the parameters (theName, theAge, theHeight, theEyeColor)
+            this.name = theName // this line of codes uses the  jQeury DOM element 'this' to specify the parameter theName is equal to the property name
+            this.age = theAge// this line of code uses the jQuery DOM element 'this' to specify the parameter theAge to the property age
+            this.height = theHeight// this line of code uses the jQuery DOM element 'this' to specify the parameter theheight to the property height
+            this.eyeColor = theEyeColor//// this line of code uses the jQuery DOM element 'this' to specify the parameter theEyeColor to the property eyeColor
+        }
+
+        person.prototype.sayInfo = function() { // this line of code uses a function to call the 'person' constructor function by using the method '.prototype()' and naming it sayInfo
+            console.log( 'My name is ' + this.name +  'and my eyes are ' + this.eyeColor)//this line of code console logs 'my name is...'
+        }
+
+        person.prototype.jump = function() {
+            console.log('I jumped ' + this.height/5)
+        }
+
+        person.prototype.sayAge = function() {
+            console.log('I am ' + this.age/2)
+        }
+
+        var h = new person('harold', 25, 71, 'brown') //this creates a variable 'h' or "person harold"
+        var j = new person('joe', 40, 65, 'blue')    
+        var b = new person('bob', 18, 80, 'green')
+ </script>
+        
+</body>
+</html>

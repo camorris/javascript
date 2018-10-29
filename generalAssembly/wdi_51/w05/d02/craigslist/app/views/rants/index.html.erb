@@ -1,0 +1,8 @@
+<h1>All them rants</h1>
+<%= @rants.inspect %>
+
+<ul>
+    <% @rants.each do |r| %>
+        <li><%= r %></li>
+    <% end %>
+</ul>

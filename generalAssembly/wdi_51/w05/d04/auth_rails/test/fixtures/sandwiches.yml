@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bread: MyString
+  cheese: MyString
+  protein: MyString
+  toasted: false
+  user: one
+
+two:
+  bread: MyString
+  cheese: MyString
+  protein: MyString
+  toasted: false
+  user: two

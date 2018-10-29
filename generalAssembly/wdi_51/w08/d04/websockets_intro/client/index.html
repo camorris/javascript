@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.15/p5.min.js"></script>
+    <title>Sockets</title>
+</head>
+<body>
+    <h1>general assembly</h1>
+    <button id="tomato">tomato</button>
+    <button id="lime">lime</button>
+    <button id="clear">clear</button>
+    <script>
+        var socket = io()
+        var clrButton = document.querySelector('#clear')
+        var tomatoBtn = document.querySelector('#tomato')
+        var limeBtn = document.querySelector('#lime')
+        
+        function setup(){
+            createCanvas(400,400)
+        }
+        
+      function mouseMoved(){
+            socket.emit('mouse-moved', {x: mouseX, y: mouseY})
+        }
+         socket.on('coordinates', (data)=>{
+             rect(data.x,data.y,20,20)
+         })
+        
+        socket.on('server-says', function(data){
+            console.log(data)
+        })
+
+        tomatoBtn.addEventListener('click', (evt)=>{
+            socket.emit('change-color','tomato')
+        })
+
+        limeBtn.addEventListener('click', (evt)=>{
+            socket.emit('change-color', 'lime')
+        })
+
+        socket.on('change-bg-color', (data)=>{
+            document.body.style.background = data
+        })
+
+        clrButton.addEventListener('click', (evt)=>{
+            socket.emit('clear-canvas')
+        })
+        socket.on('boolean', (data)=>{
+            clear()
+        })
+    </script>
+</body>
+</html>

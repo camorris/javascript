@@ -1,0 +1,33 @@
+<!-- What happens when javascript executes (runs) my code? -->
+
+<!-- Global EXecution Contexts place where my code is run as soon as the variable is made.
+
+    Place where we can store variables and functions. Global Memory.
+    Thread of Execution interacts Execution Stack (Call Stack: where we keep track of functions).
+
+    (these two make up Global Execution Context)
+-->
+<script type="text/javascript">
+  var num = 3;//variable of num stored in Global Memory
+  function multiplyBy2(inputNumber){
+    var result = inputNumber*2;
+    return result;
+  }
+  // definig a functions
+  var name = "Shno"
+  var output = multiplyBy2(num);// created the variable output and evaluate multiplyBy2
+
+
+multiplyBy2() // is invoking a functions
+// when you execute a function you create a new execution context comprising:
+//      - the thread of execution
+//      - a local memory('Local Variable Environment')where anything dfined in the function is stored
+
+
+
+  // Javascript is single threded meaning it gives ability to do synchronous execution . C++ multiple threads gives you alot of performance but is difficult more so for game development.
+
+  // Functional Programming has two things
+  //  - Pure Functions no side effects outside of the function itself
+  // - 'higher order Functions' highly valuable tool & often part of the Codesmith interview
+</script>

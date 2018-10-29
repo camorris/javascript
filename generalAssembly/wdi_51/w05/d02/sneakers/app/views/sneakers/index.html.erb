@@ -1,0 +1,6 @@
+<h1>WDI_51 Sneakers</h1>
+<ul>
+    <% @sneakers.each do |s|%>
+    <li><%= link_to(s.brand, "/sneakers/#{s.id}")%> </li>
+<% end %>
+</ul>

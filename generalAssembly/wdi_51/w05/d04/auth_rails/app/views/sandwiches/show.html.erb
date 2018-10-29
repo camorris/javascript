@@ -1,0 +1,8 @@
+<h1><%= @sandwich.bread %></h1>
+<h2><%= @sandwich.cheese %></h2>
+<h2><%= @sandwich.protein %></h2>
+<h2>Toasted: <%= @sandwich.toasted %></h2>
+
+By: <%= link_to @sandwich.user.name, user_path(@sandwich.user) %>
+about <%= time_ago_in_words @sandwich.created_at %> ago
+

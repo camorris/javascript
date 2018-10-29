@@ -1,0 +1,12 @@
+<h1>Elements#new</h1>
+<%= form_for @element do |f| %>
+    <%= f.text_field :name, {placeholder: "Name"} %>
+    <br />
+    <%= f.text_area :symbol, {placeholder: "Symbol"} %>
+    <br />
+    <%= f.text_field :proton_count, {placeholder: "Atomic Number"} %>
+    <br />
+    <%= f.text_field :chemical_property, {placeholder: "Chemical Property"} %>
+    <br />
+    <%= f.submit %>
+<% end %>

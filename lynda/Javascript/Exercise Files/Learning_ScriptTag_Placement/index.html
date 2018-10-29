@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- js reads the file from top to bottom -->
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>An empty page</title>
+</head>
+
+<body>
+
+</body>
+
+<script src="script.js" defer></script>
+<!-- this goes in the head -->
+<script src="script.js"></script> 
+<!-- this will go after the body -->
+<script src="scripts.js" async></script>
+<!-- the js file will downloaded alongside the html file and render block when the script is rendered -->
+<!-- above is not considered dirty code because we created a separate js file -->
+</html>

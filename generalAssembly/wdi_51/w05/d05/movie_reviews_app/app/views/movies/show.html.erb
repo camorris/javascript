@@ -1,0 +1,10 @@
+<h1><%= @the_movie.title %></h1>
+<h2><%= @the_movie.year %></h2>
+<p><%= @the_movie.synopsis %></p>
+
+<h2>Reviews</h2>
+<ul>
+    <% @the_movie.reviews.each do |r| %>
+        <li><%= r.title %> by: <%= r.user.name %> </li>
+    <% end %>
+<ul>

@@ -1,0 +1,13 @@
+
+<h1>Create New Review</h1>
+
+ <%= form_for @the_new_review do |f| %>
+ <%=f.text_field :title, {placeholder: "Title"} %> 
+ <br />
+ <%=f.text_area :body, {placeholder: "Body"} %>
+ <br />
+ <%=f.number_field :movie_id, {placeholder: "Movie Id"} %>
+ <br />
+ 
+ <%= f.submit %>
+ <%end %>

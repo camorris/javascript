@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>WINNER</button>
+    <div class='little-square'> The Div </div>
+    <button id="accept"> Read conditions </button>
+    <script>
+    var theButton = document.querySelector('button')//this line of code uses javascript to select the button tag
+    var littleSquare = document.querySelector('.little-square')//this line of code uses javascript to select the class 'little-square'
+    var acceptButton = document.querySelector('#accept')//this line of code uses the variable acceptButton for the id 'accept'
+
+    littleSquare.onclick = function(){prompt("whassuuup?")}; //this line of code assigns a prompt to say 'wassup' once the litt-square is click since we used a even listener attached to the variable
+    theButton.onclick = function(){prompt("you won a million dollars")};//this line of code assigns a prompt to say you won a million dollars once you click on 'theButton'
+    function handleAgree() { confirm("Acceptterms?")}//this function will confirm things type into input box
+
+    acceptButton.addEventListener('click', handleAgree)
+
+    
+    </script>
+
+</body>
+</html>
